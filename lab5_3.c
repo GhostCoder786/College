@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int smallestNumber(int arr[],int size){
-    int k = 0;
+    int k = arr[0];
     for(int i=0;i<size;i++){
         if(arr[i]<k){
             k = arr[i];
@@ -11,7 +11,7 @@ int smallestNumber(int arr[],int size){
 }
 
 int largestNumber(int arr[],int size){
-    int k = 0;
+    int k = arr[0];
     for(int i=0;i<size;i++){
         if(arr[i]>k){
             k = arr[i];
@@ -25,7 +25,7 @@ int main(){
     int size;
     printf("Enter the size of the list: ");
     scanf("%d",&size);
-
+    printf("Enter the list: ");
     int arr[size];
     for(int i=0;i<size;i++){
         if(i<size-1){
@@ -36,8 +36,8 @@ int main(){
         }
     }
 
-    printf("\nSmallest Numer in the list is: %d: ",smallestNumber(arr,size));
-    printf("Largest Number in the list is: %d",largestNumber(arr,size));
-    printf('\n');
+    printf("\nSmallest Numer in the list is: %d\n ",smallestNumber(arr,size));
+    printf("Largest Number in the list is: %d\n",largestNumber(arr,size));
+
     return 0;
 }
