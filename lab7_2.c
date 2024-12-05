@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+void InsertString(char mainString[], char subString[], int index)
+{
+    int i, j = 0;
+    for (i = index - 1; mainString[i] != '\0'; i++)
+    {
+        mainString[i] = subString[j++];
+    }
+    mainString[i] = '\0';
+    printf("%s", mainString);
+}
 int main()
 {
     printf("Created By ARYAN KHANNA AR-B1\n\n");
@@ -12,12 +22,7 @@ int main()
     gets(string2);
     printf("Enter the index: ");
     scanf("%d", &index);
-    int j = 0;
-    for (int i = index - 1; string1[i] != '\0'; i++)
-    {
-        string1[i] = string2[j++];
-    }
-
+    InsertString(string1, string2, index);
     printf("Final String is : %s\n", string1);
     return 0;
 }

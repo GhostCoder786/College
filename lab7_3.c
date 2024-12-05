@@ -11,12 +11,18 @@ int length(char string[])
     return i;
 }
 
-int Palindrome(char string[], int i)
+int Palindrome(char string[], int len)
 {
-    int j = i / 2;
-    for (int k = 0; k < j; k++)
+    char string2[100];
+    int i = 0;
+    for (int i = 0; i < len; i++)
     {
-        if (string[k] != string[i - k - 1])
+        string2[i] = string[len - i - 1];
+    }
+    string2[len] = '\0';
+    for (int i = 0; i < len; i++)
+    {
+        if (string[i] != string2[i])
         {
             return 0;
         }
